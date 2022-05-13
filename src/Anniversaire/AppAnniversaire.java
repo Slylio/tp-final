@@ -6,6 +6,6 @@ import Anniversaire.View.PagePrincipale;
 
 public class AppAnniversaire {
     public static void main(String[] args) throws IOException {
-        new PagePrincipale();
+        new ControlPrincipal();
     }
 }
