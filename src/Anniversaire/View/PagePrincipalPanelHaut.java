@@ -13,9 +13,9 @@ public class PagePrincipalPanelHaut extends JPanel {
     public void setImage(String str){
         switch (str){
             case "obelix":
-                this.filepath="obelix.png";
+                this.filepath="src/obelix.png";
             case "asterix":
-                this.filepath="asterix.png";
+                this.filepath="src/asterix.jpeg";
             default:
                 this.filepath="";
         }

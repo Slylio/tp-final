@@ -1,24 +1,15 @@
 package Anniversaire.View;
-import java.awt.event.MouseListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
+import Anniversaire.Control.ActionClickBouton;
+import java.awt.event.*;
 
 public class PanelAsterix extends JPanel{
-    private JPanel imageButton;
     public PanelAsterix(){
+        JButton imageButton = new JButton(new ImageIcon("src/asterix.jpeg"));
         this.add(new JLabel("0"));
-
-        ImageIcon imageAsterix = new ImageIcon("asterix.png");
-        JLabel imageButton = new JLabel(imageAsterix);
         this.add(imageButton);
         this.setVisible(true);
-        /*
-        imageButton.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent me) {
-            System.out.println("CLICKED");
-            }
-        });*/
+
+        imageButton.addActionListener(new ActionClickBouton("asterix"));
     }
 }
