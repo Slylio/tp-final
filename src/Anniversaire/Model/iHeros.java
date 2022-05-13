@@ -4,4 +4,5 @@ public interface iHeros {
     int getCounter();
     void addCounter();
     void setCounter(int counter);
+    String getName();
 }

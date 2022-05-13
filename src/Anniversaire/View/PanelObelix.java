@@ -2,6 +2,7 @@ package Anniversaire.View;
 import javax.swing.*;
 
 import Anniversaire.Control.ActionClickBouton;
+import Anniversaire.Model.Obelix;
 
 import java.awt.event.*;
 
@@ -14,6 +15,6 @@ public class PanelObelix extends JPanel{
         this.add(new JLabel("0"));
         this.setVisible(true);
 
-        imageButton.addActionListener(new ActionClickBouton("obelix"));
+        imageButton.addActionListener(new ActionClickBouton(new Obelix()));
     }
 }

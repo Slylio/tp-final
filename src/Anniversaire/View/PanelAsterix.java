@@ -1,6 +1,8 @@
 package Anniversaire.View;
 import javax.swing.*;
 import Anniversaire.Control.ActionClickBouton;
+import Anniversaire.Model.Asterix;
+
 import java.awt.event.*;
 
 public class PanelAsterix extends JPanel{
@@ -10,6 +12,6 @@ public class PanelAsterix extends JPanel{
         this.add(imageButton);
         this.setVisible(true);
 
-        imageButton.addActionListener(new ActionClickBouton("asterix"));
+        imageButton.addActionListener(new ActionClickBouton(new Asterix()));
     }
 }

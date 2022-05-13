@@ -4,23 +4,27 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
+import Anniversaire.Model.Asterix;
+import Anniversaire.Model.iHeros;
+
 public class ActionClickBouton extends AbstractAction{
-    private String hero;
-    public ActionClickBouton(String hero){
+    private iHeros hero;
+    
+    public ActionClickBouton(iHeros hero){
         this.hero=hero;
     }
 
-    public String getHero() {
+    public iHeros getHero() {
         return hero;
     }
 
-    public void setHero(String hero) {
+    public void setHero(iHeros hero) {
         this.hero = hero;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(getHero()+" action");     
+        System.out.println(hero.getName()+" action");     
     }
 
 
