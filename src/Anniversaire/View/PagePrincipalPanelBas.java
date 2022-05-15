@@ -6,8 +6,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.event.*;
 
-import Anniversaire.Control.ActionClickButton;
-
 public class PagePrincipalPanelBas extends JPanel {
     //contient les panels asterix et obelix
     private LabelPanel labelPanelAsterix;
