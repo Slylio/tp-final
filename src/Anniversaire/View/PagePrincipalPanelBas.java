@@ -1,20 +1,21 @@
 package Anniversaire.View;
 import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.event.*;
 
-import Anniversaire.Control.ControlPrincipal;
+import Anniversaire.Control.ActionClickButton;
 
 public class PagePrincipalPanelBas extends JPanel {
     //contient les panels asterix et obelix
     private LabelPanel labelPanelAsterix;
     private LabelPanel labelPanelObelix;
-    private ActionClickButton actionAsterix;
-    private ActionClickButton actionObelix;
 
     public PagePrincipalPanelBas(ActionListener actionAsterix,ActionListener actionObelix){
-        labelPanelAsterix=new LabelPanel();
-        labelPanelObelix=new LabelPanel();
+        labelPanelAsterix=new LabelPanel(0);
+        labelPanelObelix=new LabelPanel(0);
 
         this.setLayout(new GridLayout(1,2));
         
@@ -26,7 +27,6 @@ public class PagePrincipalPanelBas extends JPanel {
         
         this.add(obelixButton);
         this.add(labelPanelObelix);
-        
 
         asterixButton.addActionListener(actionAsterix);
         obelixButton.addActionListener(actionObelix);
@@ -35,10 +35,10 @@ public class PagePrincipalPanelBas extends JPanel {
     }
 
     public LabelPanel getLabelAsterix(){
-        return this.labelPanelAsterix;
+        return labelPanelAsterix;
     }
 
     public LabelPanel getLabelObelix(){
-        return this.labelPanelObelix;
+        return labelPanelObelix;
     }
 }

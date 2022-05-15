@@ -1,23 +1,14 @@
 package Anniversaire.Control;
 import java.awt.event.ActionEvent;
-
-import javax.naming.ldap.Control;
-import javax.swing.AbstractAction;
-import javax.swing.JPanel;
-
-import org.w3c.dom.events.MouseEvent;
-
-import Anniversaire.Model.Asterix;
 import Anniversaire.Model.iHeros;
-import Anniversaire.View.PagePrincipalPanelHaut;
-import Anniversaire.View.iPanelHeros;
+import java.awt.event.ActionListener;
+;
 
-public class ClickButtonAction implements ActionListener{
+public class ActionClickButton implements ActionListener{
     private ControlPrincipal controler;
     private iHeros hero;
-    private PagePrincipalPanelHaut panelHaut;
 
-    public ClickButtonAction(ControlPrincipal controler,iHeros hero){
+    public ActionClickButton(ControlPrincipal controler,iHeros hero){
         this.controler=controler;
         this.hero=hero;
     }
@@ -31,7 +22,7 @@ public class ClickButtonAction implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(MouseEvent e) {
+    public void actionPerformed(ActionEvent e) {
         controler.increment(hero);
     }
 }

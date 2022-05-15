@@ -1,6 +1,10 @@
-import Anniversaire.Model.Asterix;
-import Anniversaire.Model.iHeros;
+package Anniversaire.Control;
+import java.io.IOException;
+import Anniversaire.Model.*;
+import Anniversaire.View.LabelPanel;
 import Anniversaire.View.PagePrincipale;
+import Anniversaire.View.PanelAsterix;
+import Anniversaire.View.PanelObelix;
 
 public class ControlPrincipal {
     private PagePrincipale fenetre;
@@ -9,7 +13,7 @@ public class ControlPrincipal {
     private ActionClickButton actionAsterix;
     private ActionClickButton actionObelix;
 
-    public ControlPrincipal(){
+    public ControlPrincipal() throws IOException{
         asterix=new Asterix();
         obelix=new Obelix();
         actionAsterix=new ActionClickButton(this,asterix);
@@ -18,12 +22,27 @@ public class ControlPrincipal {
     }
 
     public void increment(iHeros hero){
-        if (hero.getClass().equals("Anniversaire.View.Asterix")){
-            int count=fenetre.getPanelBas().getLabelAsterix().getCount();
-            fenetre.getPanelBas().getLabelAsterix().setCount(count+1);
+        PanelAsterix panelImageAsterix = fenetre.getHaut().getPanelAsterix();
+        PanelObelix panelImageObelix = fenetre.getHaut().getPanelObelix();
+        if (hero.getClass().toString().contains("Asterix")){
+            //compteur
+            LabelPanel labelPanelAsterix = fenetre.getPanelBas().getLabelAsterix();
+            int presentCount=labelPanelAsterix.getCount();
+            labelPanelAsterix.setCount(presentCount+1);
+            labelPanelAsterix.updateDisplayCount();
+            //image baffes
+            
+            
+            panelImageAsterix.setVisible(true);
+            panelImageObelix.setVisible(false);
+
         } else {
-            int count=fenetre.getPanelBas().getLabelObelix().getCount();
-            fenetre.getPanelBas().getLabelObelix().setCount(count+2);
+            LabelPanel labelPanelObelix = fenetre.getPanelBas().getLabelObelix();
+            int presentCount=labelPanelObelix.getCount();
+            labelPanelObelix.setCount(presentCount+2);
+            labelPanelObelix.updateDisplayCount();
+            panelImageAsterix.setVisible(false);
+            panelImageObelix.setVisible(true);
         }
     }
 }
